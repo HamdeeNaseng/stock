@@ -5,16 +5,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
+import java.util.List;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
+import org.apache.kafka.common.config.types.Password;
 import org.hibernate.annotations.UuidGenerator;
 
 @Entity
@@ -26,9 +29,9 @@ import org.hibernate.annotations.UuidGenerator;
 public class User {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @UuidGenerator
-  private UUID id;
+  @Column(name = "id", nullable = false, unique = true, length = 36)
+  private String id;
+
 
   @Column(name = "first_name")
   private String firstName;
@@ -45,7 +48,6 @@ public class User {
   public boolean isEmpty() {
     return id == null;
   }
-
 
   public User(
     String firstName,

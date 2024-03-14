@@ -1,6 +1,7 @@
 package com.jsp.stock.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.jsp.stock.entity.Items;
 import com.jsp.stock.repository.ItemRepository;
@@ -24,6 +25,10 @@ public class ItemService {
 
     public void deleteItemById(Long id) {
         itemRepository.deleteById(id);
+    }
+    public boolean saveItemWithImage(Items item, MultipartFile file) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'saveItemWithImage'");
     }
 
     
