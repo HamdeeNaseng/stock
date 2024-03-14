@@ -9,6 +9,12 @@ public class CategoryService {
     public CategoryService(CategoryRepository categoryRepository){
         this.categoryRepository = categoryRepository;
     }
+    public Category getCategoryById(int id) {
+        return categoryRepository.findById(id).orElse(null);
+    }
     
     //Get all categories
-   
+    public Iterable<Category> getAllCategories(){
+        return categoryRepository.findAll();
+    }
+}
