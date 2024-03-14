@@ -1,5 +1,5 @@
 package com.jsp.stock.service;
 
-public class ItemService {
+public class UserService {
 
 }
