@@ -29,8 +29,9 @@ import org.hibernate.annotations.UuidGenerator;
 public class User {
 
   @Id
-  @Column(name = "id", nullable = false, unique = true, length = 36)
-  private String id;
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @UuidGenerator
+  private UUID id;
 
 
   @Column(name = "first_name")
