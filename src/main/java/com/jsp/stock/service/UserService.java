@@ -1,5 +1,6 @@
 package com.jsp.stock.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +18,9 @@ public class UserService {
     }
     public User getUserById(Long authorId) {
         return userRepository.findById(authorId).orElse(null);
+    }
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
 }

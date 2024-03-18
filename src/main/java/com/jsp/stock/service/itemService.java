@@ -30,6 +30,10 @@ public class ItemService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'saveItemWithImage'");
     }
+    public void updatedItem(Items updatedItem) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updatedItem'");
+    }
 
     
 }

@@ -2,9 +2,6 @@ package com.jsp.stock.components;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.UUID;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,10 +9,9 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+
 import com.jsp.stock.entity.Category;
 import com.jsp.stock.entity.Items;
 import com.jsp.stock.entity.User;
@@ -40,6 +36,7 @@ public class KafkaConsumer {
 		this.categoryService = categoryService;
 	}
 
+	@SuppressWarnings("null")
 	@KafkaListener(topics = "users", groupId = "create-user")
 	public void consumeUser(String message) {
 		System.out.println("Consumed message: " + message);
