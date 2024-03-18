@@ -129,7 +129,8 @@ public class KafkaConsumer {
 		}
 		// Set the author objects
 		try {
-			UUID authorId = UUID.fromString(author);
+			// UUID authorId = UUID.fromString(author);
+			Long authorId = Long.parseLong(author);
 			// If no exception is thrown, 'authorId' is a valid UUID
 			User authorObj = userService.getUserById(authorId);
 			if (authorObj != null) {

@@ -30,8 +30,8 @@ public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @UuidGenerator
-  private UUID id;
+  // @UuidGenerator
+  private Long id;
 
 
   @Column(name = "first_name")

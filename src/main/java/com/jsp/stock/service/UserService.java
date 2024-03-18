@@ -15,7 +15,7 @@ public class UserService {
     public void save(User user) {
         userRepository.save(user);
     }
-    public User getUserById(UUID authorId) {
+    public User getUserById(Long authorId) {
         return userRepository.findById(authorId).orElse(null);
     }
 

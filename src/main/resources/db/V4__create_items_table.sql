@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS items (
     item_quantity INT,
     item_description TEXT,
     category_item_id INT REFERENCES category(id),
-    author_item_id SERIAL REFERENCES users(id), -- Change the data type to UUID
+    author_item_id UUID REFERENCES users(id), -- Change the data type to UUID
     item_status VARCHAR(255),
     item_image_url VARCHAR(255),
     item_created TIMESTAMP,
