@@ -1,7 +1,5 @@
 package com.jsp.stock.entity.cache;
 
-import java.util.UUID;
-
 import org.springframework.data.redis.core.RedisHash;
 
 import com.jsp.stock.entity.User;
